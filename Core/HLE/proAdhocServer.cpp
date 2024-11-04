@@ -95,7 +95,7 @@ static const db_crosslink default_crosslinks[] = {
 	// Blood Bowl
 	{ "ULES01230", "ULUS10516" },
 
-	// Bomberman 
+	// Bomberman
 	{ "ULJM05034", "ULUS10121" },
 	{ "ULES00469", "ULUS10121" },
 	{ "ULJM05316", "ULUS10121" },
@@ -150,7 +150,7 @@ static const db_crosslink default_crosslinks[] = {
 	// Gundam VS Gundam - Next Plus
 	{ "ULJS00250", "NPJH50107" },
 	{ "ULJS19048", "NPJH50107" },
-	
+
 	// Hatsune Miku - Project Diva Extend
 	{ "NPJH50465", "ULJM05933" },
 
@@ -169,7 +169,7 @@ static const db_crosslink default_crosslinks[] = {
 	// Metal Gear Solid - Peace Walker
 	{ "ULES01372", "NPJH50045" },
 	{ "ULUS10509", "NPJH50045" },
-	
+
 	// Metal Gear Solid - Portable Ops
 	{ "ULES00645", "ULUS10202" },
 	{ "ULJM05193", "ULUS10202" },
@@ -213,7 +213,7 @@ static const db_crosslink default_crosslinks[] = {
 	// Pangya! - Fantasy Golf
 	{ "ULJM05440", "ULUS10438" },
 	{ "ULKS46164", "ULUS10438" },
-	
+
 	// PRO Evolution Soccer 2012
 	{ "ULES01540", "ULUS10586" },
 	{ "ULES01541", "ULUS10586" },
@@ -265,7 +265,7 @@ static const db_crosslink default_crosslinks[] = {
 	// Soul Calibur - Broken Destiny
 	{ "ULES01298", "ULUS10457" },
 	{ "ULJS00202", "ULUS10457" },
-	
+
 	// Split Second - Velocity
 	{ "ULES01402", "ULUS10513" },
 	{ "ULJM05812", "ULUS10513" },
@@ -277,7 +277,7 @@ static const db_crosslink default_crosslinks[] = {
 
 	// Taiko no Tatsujin Portable DX"
 	{ "ULJS00383", "NPJH50426" },
-	
+
 	// Tekken 6
 	{ "ULES01376", "ULUS10466" },
 	{ "NPJH50184", "ULUS10466" },
@@ -307,7 +307,7 @@ static const db_crosslink default_crosslinks[] = {
 
 	// Worms Open Warfare
 	{ "ULES00268", "ULUS10065" },
-	
+
 	// Worms Open Warfare 2
 	{ "ULES00819", "ULUS10260" },
 
@@ -1404,9 +1404,9 @@ void game_product_override(SceNetAdhocctlProductCode * product)
 					// Destroy Prepare SQL Statement
 					sqlite3_finalize(statement);
 				}*/
-				db_productid unkproduct;
+				db_productid unkproduct{};
 				strncpy(unkproduct.id, productid, sizeof(unkproduct.id));
-				strncpy(unkproduct.name, productid, sizeof(productid));
+				strncpy(unkproduct.name, productid, sizeof(productid));  // suspicious! should be sizeof(unkproduct.name)?
 				productids.push_back(unkproduct); //productids[productids.size()] = unkproduct;
 				// Log Addition
 				INFO_LOG(Log::sceNet, "AdhocServer: Added Unknown Product ID %s to Database", productid);

@@ -263,7 +263,7 @@ static void SetColorUniform3Alpha255(GLRenderManager *render, GLint *uniform, u3
 			(float)((color & 0xFF) >> 0),
 			(float)((color & 0xFF00) >> 8),
 			(float)((color & 0xFF0000) >> 16),
-			(float)alpha 
+			(float)alpha
 		};
 		render->SetUniformF(uniform, 4, col);
 	}
@@ -389,7 +389,7 @@ void LinkedShader::UpdateUniforms(const ShaderID &vsid, bool useBufferedRenderin
 	dirtyUniforms = 0;
 
 	// Analyze scene
-	bool is2D, flatScreen;
+	bool is2D = false, flatScreen = false;  // These are only initialized to avoid a compiler warning.
 	if (gstate_c.Use(GPU_USE_VIRTUAL_REALITY)) {
 		is2D = Is2DVRObject(gstate.projMatrix, gstate.isModeThrough());
 		flatScreen = IsFlatVRScene();

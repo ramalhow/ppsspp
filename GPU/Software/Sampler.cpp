@@ -174,7 +174,7 @@ void SamplerJitCache::Flush() {
 
 NearestFunc SamplerJitCache::GetByID(const SamplerID &id, size_t key, BinManager *binner) {
 	std::unique_lock<std::mutex> guard(jitCacheLock);
-	
+
 	NearestFunc func;
 	if (cache_.Get(key, &func)) {
 		return func;
@@ -357,7 +357,7 @@ inline static Nearest4 SOFTRAST_CALL SampleNearest(const int u[N], const int v[N
 			res.v[i] = RGBA4444ToRGBA8888(*(const u16 *)src);
 		}
 		return res;
-	
+
 	case GE_TFMT_5551:
 		for (int i = 0; i < N; ++i) {
 			const u8 *src = srcptr + GetPixelDataOffset<16>(texbufw, u[i], v[i], samplerID.swizzle);
@@ -494,7 +494,7 @@ Vec4IntResult SOFTRAST_CALL GetTextureFunctionOutput(Vec4IntArg prim_color_in, V
 	const Vec4<int> texcolor = texcolor_in;
 
 	Vec3<int> out_rgb;
-	int out_a;
+	int out_a = 0;
 
 	bool rgba = samplerID.useTextureAlpha;
 

@@ -71,6 +71,7 @@ void GPRRegCache::Start(MIPSState *mipsState, MIPSComp::JitState *js, MIPSComp::
 		xregs[i].dirty = false;
 		xregs[i].allocLocked = false;
 	}
+	// This is OK because all the types in reg (like OpArgs) can tolerate being memsetted.
 	memset(regs, 0, sizeof(regs));
 	OpArg base = GetDefaultLocation(MIPS_REG_ZERO);
 	for (int i = 0; i < 32; i++) {

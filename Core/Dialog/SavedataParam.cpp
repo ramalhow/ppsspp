@@ -585,7 +585,8 @@ int SavedataParam::Save(SceUtilitySavedataParam* param, const std::string &saveD
 		INFO_LOG(Log::sceUtility,"Saving file with size %u in %s",saveSize,filePath.c_str());
 
 		// copy back save name in request
-		strncpy(param->saveName, saveDirName.c_str(), 20);
+		// TODO: Trailing null?
+		strncpy(param->saveName, saveDirName.c_str(), sizeof(param->saveName));
 
 		if (!fileName.empty()) {
 			if (!WritePSPFile(filePath, data_, saveSize)) {
@@ -593,7 +594,7 @@ int SavedataParam::Save(SceUtilitySavedataParam* param, const std::string &saveD
 				delete[] cryptedData;
 				return SCE_UTILITY_SAVEDATA_ERROR_SAVE_MS_NOSPACE;
 			}
-		}	
+		}
 		delete[] cryptedData;
 	}
 
@@ -702,7 +703,7 @@ int SavedataParam::LoadSaveData(SceUtilitySavedataParam *param, const std::strin
 	saveSize = (int)readSize;
 
 	// copy back save name in request
-	strncpy(param->saveName, saveDirName.c_str(), 20);
+	strncpy(param->saveName, saveDirName.c_str(), sizeof(param->saveName));
 
 	int prevCryptMode = GetSaveCryptMode(param, saveDirName);
 	bool isCrypted = prevCryptMode != 0 && secureMode;
@@ -848,9 +849,9 @@ bool SavedataParam::LoadSFO(SceUtilitySavedataParam *param, const std::string& d
 	std::shared_ptr<ParamSFOData> sfoFile = LoadCachedSFO(sfopath);
 	if (sfoFile) {
 		// copy back info in request
-		strncpy(param->sfoParam.title, sfoFile->GetValueString("TITLE").c_str(), 128);
-		strncpy(param->sfoParam.savedataTitle, sfoFile->GetValueString("SAVEDATA_TITLE").c_str(), 128);
-		strncpy(param->sfoParam.detail, sfoFile->GetValueString("SAVEDATA_DETAIL").c_str(), 1024);
+		strncpy(param->sfoParam.title, sfoFile->GetValueString("TITLE").c_str(), sizeof(param->sfoParam.title));
+		strncpy(param->sfoParam.savedataTitle, sfoFile->GetValueString("SAVEDATA_TITLE").c_str(), sizeof(param->sfoParam.savedataTitle));
+		strncpy(param->sfoParam.detail, sfoFile->GetValueString("SAVEDATA_DETAIL").c_str(), sizeof(param->sfoParam.detail));
 		param->sfoParam.parentalLevel = sfoFile->GetValueInt("PARENTAL_LEVEL");
 		return true;
 	}
@@ -1550,7 +1551,7 @@ int SavedataParam::SetPspParam(SceUtilitySavedataParam *param)
 		if (saveDataListCount > 0 && WouldHaveMultiSaveName(param)) {
 			hasMultipleFileName = true;
 			saveDataList = new SaveFileInfo[saveDataListCount];
-			
+
 			// get and stock file info for each file
 			int realCount = 0;
 			for (int i = 0; i < saveDataListCount; i++) {
@@ -1562,7 +1563,7 @@ int SavedataParam::SetPspParam(SceUtilitySavedataParam *param)
 					for (auto it = allSaves.begin(); it != allSaves.end(); ++it) {
 						if (it->name.compare(0, gameName.length(), gameName) == 0) {
 							std::string saveName = it->name.substr(gameName.length());
-							
+
 							if (IsInSaveDataList(saveName, realCount)) // Already in SaveDataList, skip...
 								continue;
 
@@ -1604,7 +1605,7 @@ int SavedataParam::SetPspParam(SceUtilitySavedataParam *param)
 			saveNameListDataCount = realCount;
 		}
 	}
-	// Load info on only save 
+	// Load info on only save
 	if (!hasMultipleFileName) {
 		saveNameListData = 0;
 

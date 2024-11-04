@@ -968,27 +968,27 @@ uint32_t vrnd_generate(uint32_t *rcx) {
 
 // Lookup tables.
 // Note: these are never unloaded, and stay till program termination.
-static uint32_t (*vfpu_sin_lut8192)=nullptr;
-static  int8_t  (*vfpu_sin_lut_delta)[2]=nullptr;
-static  int16_t (*vfpu_sin_lut_interval_delta)=nullptr;
-static uint8_t  (*vfpu_sin_lut_exceptions)=nullptr;
+static uint32_t *vfpu_sin_lut8192 = nullptr;
+static  int8_t  (*vfpu_sin_lut_delta)[2] = nullptr;
+static  int16_t *vfpu_sin_lut_interval_delta = nullptr;
+static uint8_t  *vfpu_sin_lut_exceptions = nullptr;
 
-static  int8_t  (*vfpu_sqrt_lut)[2]=nullptr;
+static  int8_t  (*vfpu_sqrt_lut)[2] = nullptr;
 
-static  int8_t  (*vfpu_rsqrt_lut)[2]=nullptr;
+static  int8_t  (*vfpu_rsqrt_lut)[2] = nullptr;
 
-static uint32_t (*vfpu_exp2_lut65536)=nullptr;
-static uint8_t  (*vfpu_exp2_lut)[2]=nullptr;
+static uint32_t *vfpu_exp2_lut65536 = nullptr;
+static uint8_t  (*vfpu_exp2_lut)[2] = nullptr;
 
-static uint32_t (*vfpu_log2_lut65536)=nullptr;
-static uint32_t (*vfpu_log2_lut65536_quadratic)=nullptr;
-static uint8_t  (*vfpu_log2_lut)[131072][2]=nullptr;
+static uint32_t *vfpu_log2_lut65536 = nullptr;
+static uint32_t *vfpu_log2_lut65536_quadratic = nullptr;
+static uint8_t  (*vfpu_log2_lut)[131072][2] = nullptr;
 
-static  int32_t (*vfpu_asin_lut65536)[3]=nullptr;
-static uint64_t (*vfpu_asin_lut_deltas)=nullptr;
-static uint16_t (*vfpu_asin_lut_indices)=nullptr;
+static  int32_t (*vfpu_asin_lut65536)[3] = nullptr;
+static uint64_t *vfpu_asin_lut_deltas = nullptr;
+static uint16_t *vfpu_asin_lut_indices = nullptr;
 
-static  int8_t  (*vfpu_rcp_lut)[2]=nullptr;
+static  int8_t  (*vfpu_rcp_lut)[2] = nullptr;
 
 template<typename T>
 static inline bool load_vfpu_table(T *&ptr, const char *filename, size_t expected_size) {
@@ -1553,20 +1553,20 @@ float vfpu_rcp(float x) {
 void InitVFPU() {
 #if 0
 	// Load all in advance.
-	LOAD_TABLE(vfpu_asin_lut65536          ,    1536); 
-	LOAD_TABLE(vfpu_asin_lut_deltas        ,  517448); 
-	LOAD_TABLE(vfpu_asin_lut_indices       ,  798916); 
-	LOAD_TABLE(vfpu_exp2_lut65536          ,     512); 
-	LOAD_TABLE(vfpu_exp2_lut               ,  262144); 
-	LOAD_TABLE(vfpu_log2_lut65536          ,     516); 
-	LOAD_TABLE(vfpu_log2_lut65536_quadratic,     512); 
-	LOAD_TABLE(vfpu_log2_lut               , 2097152); 
-	LOAD_TABLE(vfpu_rcp_lut                ,  262144); 
-	LOAD_TABLE(vfpu_rsqrt_lut              ,  262144); 
-	LOAD_TABLE(vfpu_sin_lut8192            ,    4100); 
-	LOAD_TABLE(vfpu_sin_lut_delta          ,  262144); 
-	LOAD_TABLE(vfpu_sin_lut_exceptions     ,   86938); 
-	LOAD_TABLE(vfpu_sin_lut_interval_delta ,  131074); 
-	LOAD_TABLE(vfpu_sqrt_lut               ,  262144); 
+	LOAD_TABLE(vfpu_asin_lut65536          ,    1536);
+	LOAD_TABLE(vfpu_asin_lut_deltas        ,  517448);
+	LOAD_TABLE(vfpu_asin_lut_indices       ,  798916);
+	LOAD_TABLE(vfpu_exp2_lut65536          ,     512);
+	LOAD_TABLE(vfpu_exp2_lut               ,  262144);
+	LOAD_TABLE(vfpu_log2_lut65536          ,     516);
+	LOAD_TABLE(vfpu_log2_lut65536_quadratic,     512);
+	LOAD_TABLE(vfpu_log2_lut               , 2097152);
+	LOAD_TABLE(vfpu_rcp_lut                ,  262144);
+	LOAD_TABLE(vfpu_rsqrt_lut              ,  262144);
+	LOAD_TABLE(vfpu_sin_lut8192            ,    4100);
+	LOAD_TABLE(vfpu_sin_lut_delta          ,  262144);
+	LOAD_TABLE(vfpu_sin_lut_exceptions     ,   86938);
+	LOAD_TABLE(vfpu_sin_lut_interval_delta ,  131074);
+	LOAD_TABLE(vfpu_sqrt_lut               ,  262144);
 #endif
 }

@@ -49,7 +49,7 @@ typedef std::vector<MIPSAnalyst::AnalyzedFunction> FunctionsVector;
 static FunctionsVector functions;
 std::recursive_mutex functions_lock;
 
-// One function can appear in multiple copies in memory, and they will all have 
+// One function can appear in multiple copies in memory, and they will all have
 // the same hash and should all be replaced if possible.
 static std::unordered_multimap<u64, MIPSAnalyst::AnalyzedFunction *> hashToFunction;
 
@@ -741,7 +741,7 @@ namespace MIPSAnalyst {
 
 		return results;
 	}
-	
+
 	void Reset() {
 		std::lock_guard<std::recursive_mutex> guard(functions_lock);
 		functions.clear();
@@ -1425,8 +1425,7 @@ skip:
 	}
 
 	MipsOpcodeInfo GetOpcodeInfo(DebugInterface* cpu, u32 address) {
-		MipsOpcodeInfo info;
-		memset(&info, 0, sizeof(info));
+		MipsOpcodeInfo info{};
 
 		if (!Memory::IsValidAddress(address)) {
 			info.opcodeAddress = address;

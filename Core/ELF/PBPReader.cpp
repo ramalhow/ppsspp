@@ -55,8 +55,8 @@ bool PBPReader::GetSubFile(PBPSubFile file, std::vector<u8> *out) const {
 
 	const size_t expected = GetSubFileSize(file);
 
-	// This is only used to get the PARAM.SFO, so let's have a strict 256MB file size limit for sanity.
-	if (expected > 256 * 1024 * 1024) {
+	// This is only used to get the PARAM.SFO, so let's have a strict 128MB file size limit for sanity.
+	if (expected > 128 * 1024 * 1024) {
 		ERROR_LOG(Log::Loader, "Bad subfile size: %d", (int)expected);
 		return false;
 	}
@@ -69,6 +69,7 @@ bool PBPReader::GetSubFile(PBPSubFile file, std::vector<u8> *out) const {
 		ERROR_LOG(Log::Loader, "PBP file read truncated: %d -> %d", (int)expected, (int)bytes);
 		if (bytes < expected) {
 			out->resize(bytes);
+			// should we still return true here?
 		}
 	}
 	return true;
@@ -82,8 +83,8 @@ bool PBPReader::GetSubFileAsString(PBPSubFile file, std::string *out) const {
 
 	const size_t expected = GetSubFileSize(file);
 
-	// This is only used to get the PNG, AT3 etc, so let's have a strict 256MB file size limit for sanity.
-	if (expected > 256 * 1024 * 1024) {
+	// This is only used to get the PNG, AT3 etc, so let's have a strict 128MB file size limit for sanity.
+	if (expected > 128 * 1024 * 1024) {
 		ERROR_LOG(Log::Loader, "Bad subfile size: %d", (int)expected);
 		return false;
 	}

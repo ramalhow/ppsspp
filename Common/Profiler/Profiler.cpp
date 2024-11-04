@@ -33,10 +33,6 @@ struct Category {
 };
 
 struct CategoryFrame {
-	CategoryFrame() {
-		memset(time_taken, 0, sizeof(time_taken));
-		memset(count, 0, sizeof(count));
-	}
 	float time_taken[MAX_CATEGORIES];
 	int count[MAX_CATEGORIES];
 };
@@ -71,7 +67,7 @@ void internal_profiler_init() {
 			profiler.parentCategory[i][j] = -1;
 		}
 	}
-	history = new CategoryFrame[HISTORY_SIZE * MAX_THREADS];
+	history = new CategoryFrame[HISTORY_SIZE * MAX_THREADS]();
 }
 
 static int internal_profiler_find_thread() {

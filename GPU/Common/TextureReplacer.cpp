@@ -464,7 +464,7 @@ void TextureReplacer::ParseReduceHashRange(const std::string& key, const std::st
 		return;
 	}
 
-	float rhashvalue;
+	float rhashvalue = 0.0f;
 	if (!TryParse(valueParts[0], &rhashvalue)) {
 		ERROR_LOG(Log::G3D, "Ignoring invalid reducehashrange %s = %s, value format is 0.5", key.c_str(), value.c_str());
 		return;

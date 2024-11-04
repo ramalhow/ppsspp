@@ -112,7 +112,7 @@ static void sceKernelCpuResumeIntr(u32 enable)
 
 static int sceKernelIsCpuIntrEnable()
 {
-	u32 retVal = __InterruptsEnabled(); 
+	u32 retVal = __InterruptsEnabled();
 	DEBUG_LOG(Log::sceIntc, "%i=sceKernelIsCpuIntrEnable()", retVal);
 	return retVal;
 }
@@ -688,7 +688,7 @@ const HLEFunction Kernel_Library[] =
 	{0X4AC57943, &WrapI_I<sceKernelRegisterExitCallback>,      "sceKernelRegisterExitCallback",       'i', "i"    },
 };
 
-static u32 sysclib_memcpy(u32 dst, u32 src, u32 size) {	
+static u32 sysclib_memcpy(u32 dst, u32 src, u32 size) {
 	if (Memory::IsValidRange(dst, size) && Memory::IsValidRange(src, size)) {
 		memcpy(Memory::GetPointerWriteUnchecked(dst), Memory::GetPointerUnchecked(src), size);
 	}
@@ -700,6 +700,8 @@ static u32 sysclib_memcpy(u32 dst, u32 src, u32 size) {
 
 static u32 sysclib_strcat(u32 dst, u32 src) {
 	ERROR_LOG(Log::sceKernel, "Untested sysclib_strcat(dest=%08x, src=%08x)", dst, src);
+	// TODO: Compiler gives a nonsensical warning here, but it's possible that dst and src could overlap.
+	// Check and error out?
 	if (Memory::IsValidNullTerminatedString(dst) && Memory::IsValidNullTerminatedString(src)) {
 		strcat((char *)Memory::GetPointerWriteUnchecked(dst), (const char *)Memory::GetPointerUnchecked(src));
 	}
@@ -964,7 +966,7 @@ static u32 sysclib_strncpy(u32 dest, u32 src, u32 size) {
 	return hleLogSuccessX(Log::sceKernel, dest);
 }
 
-static u32 sysclib_strtol(u32 strPtr, u32 endPtrPtr, int base) {	
+static u32 sysclib_strtol(u32 strPtr, u32 endPtrPtr, int base) {
 	if (!Memory::IsValidNullTerminatedString(strPtr)) {
 		return hleLogError(Log::sceKernel, 0, "invalid address");
 	}

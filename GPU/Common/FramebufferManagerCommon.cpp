@@ -903,7 +903,7 @@ void FramebufferManagerCommon::CopyToColorFromOverlappingFramebuffers(VirtualFra
 
 				gpuStats.numReinterpretCopies++;
 			}
-			
+
 			if (pipeline) {
 				tookActions = true;
 				// OK we have the pipeline, now just do the blit.
@@ -2090,10 +2090,10 @@ bool FramebufferManagerCommon::NotifyFramebufferCopy(u32 src, u32 dst, int size,
 	// For now fill in these old variables from the candidates to reduce the initial diff.
 	VirtualFramebuffer *dstBuffer = nullptr;
 	VirtualFramebuffer *srcBuffer = nullptr;
-	int srcY;
-	int srcH;
-	int dstY;
-	int dstH;
+	int srcY = 0;
+	int srcH = 0;
+	int dstY = 0;
+	int dstH = 0;
 
 	const CopyCandidate *bestSrc = GetBestCopyCandidate(srcCandidates, src, channel);
 	if (bestSrc) {
@@ -3500,7 +3500,7 @@ void FramebufferManagerCommon::BlitFramebuffer(VirtualFramebuffer *dst, int dstX
 		const bool xOverlap = src == dst && srcX2 > dstX1 && srcX1 < dstX2;
 		const bool yOverlap = src == dst && srcY2 > dstY1 && srcY1 < dstY2;
 		if (sameSize && srcInsideBounds && dstInsideBounds && !(xOverlap && yOverlap)) {
-			draw_->CopyFramebufferImage(src->fbo, 0, srcX1, srcY1, 0, dst->fbo, 0, dstX1, dstY1, 0, dstX2 - dstX1, dstY2 - dstY1, 1, 
+			draw_->CopyFramebufferImage(src->fbo, 0, srcX1, srcY1, 0, dst->fbo, 0, dstX1, dstY1, 0, dstX2 - dstX1, dstY2 - dstY1, 1,
 				channel == RASTER_COLOR ? Draw::FB_COLOR_BIT : Draw::FB_DEPTH_BIT, tag);
 			return;
 		}
