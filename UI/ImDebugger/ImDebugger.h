@@ -18,6 +18,7 @@
 #include "UI/ImDebugger/ImDisasmView.h"
 #include "UI/ImDebugger/ImStructViewer.h"
 #include "UI/ImDebugger/ImGe.h"
+#include "UI/ImDebugger/ImConsole.h"
 
 // This is the main state container of the whole Dear ImGUI-based in-game cross-platform debugger.
 //
@@ -54,11 +55,6 @@ private:
 
 	ImDisasmView disasmView_;
 	char searchTerm_[64]{};
-};
-
-class ImLuaConsole {
-public:
-	// Stub
 };
 
 struct ImConfig {
@@ -103,9 +99,18 @@ struct ImDebugger {
 	RequesterToken reqToken_;
 
 	ImDisasmWindow disasm_;
-	ImLuaConsole luaConsole_;
 	ImStructViewer structViewer_;
 
 	// Open variables.
 	ImConfig cfg_;
+	ImConsole luaConsole_;
+
+	// Open variables.
+	bool disasmOpen_ = true;
+	bool demoOpen_ = false;
+	bool regsOpen_ = true;
+	bool threadsOpen_ = true;
+	bool callstackOpen_ = true;
+	bool modulesOpen_ = true;
+	bool consoleOpen_ = true;
 };
