@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonXbox", "CommonXbox\CommonXbox.vcxproj", "{C577A023-8A51-4BCB-A551-F5B91D226063}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E45C9A1-BE68-4E40-9FE7-AC892E5208F0} = {5E45C9A1-BE68-4E40-9FE7-AC892E5208F0}
+		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383} = {83D389CD-0CF9-4AAB-AF82-1BC944B0D383}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ext", "Ext", "{CEDB0911-C27E-4141-B752-E883D52B8BE9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib\zlib.vcxproj", "{5E45C9A1-BE68-4E40-9FE7-AC892E5208F0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzstd", "libzstd\libzstd.vcxproj", "{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Xbox 360 = Debug|Xbox 360
+		Release|Xbox 360 = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C577A023-8A51-4BCB-A551-F5B91D226063}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{C577A023-8A51-4BCB-A551-F5B91D226063}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{C577A023-8A51-4BCB-A551-F5B91D226063}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{C577A023-8A51-4BCB-A551-F5B91D226063}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{5E45C9A1-BE68-4E40-9FE7-AC892E5208F0}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{5E45C9A1-BE68-4E40-9FE7-AC892E5208F0}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{5E45C9A1-BE68-4E40-9FE7-AC892E5208F0}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{5E45C9A1-BE68-4E40-9FE7-AC892E5208F0}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}.Release|Xbox 360.Build.0 = Release|Xbox 360
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5E45C9A1-BE68-4E40-9FE7-AC892E5208F0} = {CEDB0911-C27E-4141-B752-E883D52B8BE9}
+		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383} = {CEDB0911-C27E-4141-B752-E883D52B8BE9}
+	EndGlobalSection
+EndGlobal

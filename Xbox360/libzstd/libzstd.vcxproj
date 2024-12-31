@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Xbox 360">
+      <Configuration>Debug</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Xbox 360">
+      <Configuration>Release</Configuration>
+      <Platform>Xbox 360</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\ext\zstd\lib\common\bitstream.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\compiler.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\error_private.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\fse.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\mem.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\pool.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\portability_macros.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\threading.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\xxhash.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\common\zstd_internal.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\hist.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstdmt_compress.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_compress_internal.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_compress_literals.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_compress_sequences.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_compress_superblock.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_cwksp.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_double_fast.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_fast.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_lazy.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_ldm.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\compress\zstd_opt.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\decompress\zstd_ddict.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_legacy.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_v01.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_v02.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_v03.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_v04.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_v05.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_v06.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\legacy\zstd_v07.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\zstd.h" />
+    <ClInclude Include="..\..\ext\zstd\lib\zstd_errors.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\ext\zstd\lib\common\debug.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\common\entropy_common.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\common\error_private.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\common\fse_decompress.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\common\pool.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\common\threading.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\common\xxhash.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\common\zstd_common.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\fse_compress.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\hist.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\huf_compress.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstdmt_compress.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_compress.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_compress_literals.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_compress_sequences.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_compress_superblock.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_double_fast.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_fast.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_lazy.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_ldm.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\compress\zstd_opt.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\decompress\huf_decompress.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\decompress\zstd_ddict.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\decompress\zstd_decompress.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\decompress\zstd_decompress_block.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\dictBuilder\cover.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\dictBuilder\divsufsort.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\dictBuilder\fastcover.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\dictBuilder\zdict.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\legacy\zstd_v01.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\legacy\zstd_v02.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\legacy\zstd_v03.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\legacy\zstd_v04.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\legacy\zstd_v05.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\legacy\zstd_v06.c" />
+    <ClCompile Include="..\..\ext\zstd\lib\legacy\zstd_v07.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}</ProjectGuid>
+    <Keyword>Xbox360Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Xbox 360'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(OutDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_DEBUG;_XBOX;_LIB</PreprocessorDefinitions>
+      <CallAttributedProfiling>Callcap</CallAttributedProfiling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Xbox 360'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <StringPooling>true</StringPooling>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeaderOutputFile>$(OutDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>NDEBUG;_XBOX;_LIB</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
