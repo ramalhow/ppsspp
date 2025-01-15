@@ -2,6 +2,7 @@
 #define _MATH_LIN_MATRIX4X4_H
 
 #include "Common/Math/lin/vec3.h"
+#define snprintf _snprintf
 
 namespace Lin {
 

@@ -10,6 +10,26 @@
       <Platform>Xbox 360</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Common\Math\CrossSIMD.h" />
+    <ClInclude Include="..\..\Common\Math\curves.h" />
+    <ClInclude Include="..\..\Common\Math\expression_parser.h" />
+    <ClInclude Include="..\..\Common\Math\fast\fast_matrix.h" />
+    <ClInclude Include="..\..\Common\Math\geom2d.h" />
+    <ClInclude Include="..\..\Common\Math\lin\matrix4x4.h" />
+    <ClInclude Include="..\..\Common\Math\lin\vec3.h" />
+    <ClInclude Include="..\..\Common\Math\math_util.h" />
+    <ClInclude Include="..\..\Common\Math\Statistics.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Common\Math\curves.cpp" />
+    <ClCompile Include="..\..\Common\Math\expression_parser.cpp" />
+    <ClCompile Include="..\..\Common\Math\fast\fast_matrix.c" />
+    <ClCompile Include="..\..\Common\Math\lin\matrix4x4.cpp" />
+    <ClCompile Include="..\..\Common\Math\lin\vec3.cpp" />
+    <ClCompile Include="..\..\Common\Math\math_util.cpp" />
+    <ClCompile Include="..\..\Common\Math\Statistics.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C577A023-8A51-4BCB-A551-F5B91D226063}</ProjectGuid>
     <Keyword>Xbox360Proj</Keyword>
@@ -58,6 +78,7 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>_DEBUG;_XBOX;_LIB</PreprocessorDefinitions>
       <CallAttributedProfiling>Callcap</CallAttributedProfiling>
+      <AdditionalIncludeDirectories>../ext;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -77,6 +98,7 @@
       <PrecompiledHeaderOutputFile>$(OutDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PreprocessorDefinitions>NDEBUG;_XBOX;_LIB</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../Common;../../ext;../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

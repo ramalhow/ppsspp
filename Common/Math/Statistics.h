@@ -1,6 +1,10 @@
 #pragma once
 
 #include <cmath>
+#include <limits>
+#define snprintf _snprintf
+
+#define INFINITY std::numeric_limits<double>::infinity()
 
 // Very simple stat for convenience. Keeps track of min, max, smoothed.
 struct SimpleStat {

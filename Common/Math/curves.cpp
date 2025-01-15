@@ -4,6 +4,8 @@
 #include "Common/Math/math_util.h"
 #include "curves.h"
 
+#define constexpr const
+
 float linearInOut(int t, int fadeInLength, int solidLength, int fadeOutLength) {
 	if (t < 0) return 0;
 	if (t < fadeInLength) {
@@ -45,7 +47,7 @@ float ease(int t, int fadeLength)
 	return ease((float)t / (float)fadeLength);
 }
 
-template <int hundredthsX1, int hundredthsX2, int hundredthsY1 = 0, int hundredthsY2 = 100>
+template <int hundredthsX1, int hundredthsX2, int hundredthsY1, int hundredthsY2>
 inline float bezierEaseFunc(float val) {
 	constexpr float x1 = hundredthsX1 / 100.0f;
 	constexpr float x2 = hundredthsX2 / 100.0f;
@@ -79,15 +81,15 @@ float bezierEase(float val) {
 }
 
 float bezierEaseInOut(float val) {
-	return bezierEaseFunc<42, 58>(val);
+	return bezierEaseFunc<42, 58, 0, 100>(val);
 }
 
 float bezierEaseIn(float val) {
-	return bezierEaseFunc<42, 100>(val);
+	return bezierEaseFunc<42, 100, 0, 100>(val);
 }
 
 float bezierEaseOut(float val) {
-	return bezierEaseFunc<0, 58>(val);
+	return bezierEaseFunc<0, 58, 0, 100>(val);
 }
 
 float sawtooth(int t, int period) {
