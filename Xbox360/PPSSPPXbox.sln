@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib\zlib.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzstd", "libzstd\libzstd.vcxproj", "{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{F50BE175-560E-4B89-96CC-1951FE0B4240}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Xbox 360 = Debug|Xbox 360
@@ -31,6 +33,10 @@ Global
 		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
 		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
 		{83D389CD-0CF9-4AAB-AF82-1BC944B0D383}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{F50BE175-560E-4B89-96CC-1951FE0B4240}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{F50BE175-560E-4B89-96CC-1951FE0B4240}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{F50BE175-560E-4B89-96CC-1951FE0B4240}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{F50BE175-560E-4B89-96CC-1951FE0B4240}.Release|Xbox 360.Build.0 = Release|Xbox 360
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
